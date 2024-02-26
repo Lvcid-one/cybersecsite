@@ -45,23 +45,6 @@ body {
     padding-right: 8px;
 }
 
-article {
-    margin-left: 200px;
-    /* 50 px more width of the sidenav */
-    max-width: 60%;
-}
-
-#head {
-    padding-left: 50px;
-}
-
-#explanation {
-    padding-left: 75px;
-}
-
-#lists {
-    padding-left: 75px;
-}
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -69,13 +52,62 @@ article {
     }
 
     .sidenav a {
-        font-size: 18px;
+        font-size: 12px;
     }
 }
 
-article {
-    margin-left: 150px;
-    /* same width of the sidenav */
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidenav a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
 }
 
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+
 /* end side nav styles */
+
+
+.header {
+    padding-top: 25px;
+    margin-left: 200px;
+    /* same as article */
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+article {
+    margin-left: 200px;
+    /* 50 px more width of the sidenav */
+    max-width: 60%;
+    padding-top: 50px;
+}
+
+#head {
+    padding-left: 50px;
+}
+
+#explanation {
+    padding-left: 100px;
+}
+
+#lists {
+    padding-left: 100px;
+}
